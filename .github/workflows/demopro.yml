@@ -1,0 +1,18 @@
+name: GitHub Actions Demo
+on: [push] # Triggers the workflow on every push to the repository
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # The virtual environment to use
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4 # Standard action to clone your code
+
+      - name: Run a one-line script
+        run: echo "The workflow is running!"
+
+      - name: Run a multi-line script
+        run: |
+          echo "Checking environment..."
+          node -v
+          npm -v
